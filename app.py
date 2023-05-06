@@ -12,6 +12,7 @@ if(uploaded_image!=None):
     display_image=display_image.convert("RGB")
     st.image(display_image)
     if st.button("Translate"):
+        print("Translation may take a minute or two")
         reader = easyocr.Reader(['de'])
         result = reader.readtext(np.array(display_image))
         img = np.array(display_image)
@@ -28,3 +29,4 @@ if(uploaded_image!=None):
             except:
                 pass    
         st.image(img)
+        print("Thank you for your patience")
