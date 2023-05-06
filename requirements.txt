@@ -1,6 +1,7 @@
-Pillow
-easyocr
-googletrans
-matplotlib
-opencv-python-headless==4.5.5.64
-torchvision
+easyocr==1.4.1
+opencv-python==4.5.2.54
+numpy==1.19.5
+googletrans==4.0.0
+streamlit==1.0.0
+Pillow==8.3.1
+matplotlib==3.4.2
