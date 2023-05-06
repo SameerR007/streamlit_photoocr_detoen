@@ -22,13 +22,16 @@ def ocr_translation(image, language):
     return image
 
 
-st.title("OCR Translation App")
+st.title("OCR German to English Translation App")
 
-# Upload image
 image_file = st.file_uploader("Upload an image", type=['jpg', 'jpeg', 'png'])
 if image_file is not None:
     image = Image.open(image_file)
     image=image.convert("RGB")
     image = np.array(image)
-    image = ocr_translation(image, 'de')
-    st.image(image, caption='Translated image')
+    st.image(image, caption='Uploaded image')
+    if st.button("Translate"):
+        st.text("Translation may take a minute or two")
+        image = ocr_translation(image, 'de')
+        st.image(image, caption='Translated image')
+        st.text("Thank you for your patience")
