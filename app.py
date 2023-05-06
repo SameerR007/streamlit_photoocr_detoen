@@ -25,7 +25,7 @@ if(uploaded_image!=None):
                 #translation=translator.translate(text,dest="en")
                 #img = cv2.rectangle(img,top_left,bottom_right,(0,255,0),3)
                 img = cv2.putText(img,text,top_left, font, 0.5,(255,0,0),1,cv2.LINE_AA)
-            except:
+           except:
                 pass
         st.image(img)
         st.text("Thank you for your patience")
