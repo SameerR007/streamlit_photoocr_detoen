@@ -5,14 +5,13 @@ import numpy as np
 from googletrans import Translator
 import streamlit as st
 from PIL import Image
-import os
 uploaded_image=st.file_uploader("Upload image",type=["jpg","png",])
 if(uploaded_image!=None):
     display_image=Image.open(uploaded_image)
     display_image=display_image.convert("RGB")
     st.image(display_image)
     if st.button("Translate"):
-        print("Translation may take a minute or two")
+        st.text("This may take a minute or two")
         reader = easyocr.Reader(['de'])
         result = reader.readtext(np.array(display_image))
         img = np.array(display_image)
@@ -29,4 +28,4 @@ if(uploaded_image!=None):
             except:
                 pass    
         st.image(img)
-        print("Thank you for your patience")
+        st.text("Thank you for your patience")
