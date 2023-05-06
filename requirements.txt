@@ -2,4 +2,4 @@ Pillow
 easyocr
 googletrans
 matplotlib
-opencv-python-headless
+opencv-python-headless==4.5.5.64
